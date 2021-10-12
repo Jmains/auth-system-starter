@@ -1,0 +1,29 @@
+<%- include('head', { title: 'Login | Brigade Management' }) -%>
+
+<div class="container mt-5">
+  <h1>Login</h1>
+
+  <form method="POST" action="/login">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" id="password" />
+    </div>
+    <% if (text) { %>
+    <p><em class="text-danger"><%= text %></em></p>
+    <% } %>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div>Try accessing <a href="/restricted">/restricted</a></div>
+</div>
+
+<%- include('footer') -%>
